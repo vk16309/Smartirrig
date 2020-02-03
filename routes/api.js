@@ -5,7 +5,7 @@ const Data=require('../models/sensordata')
 router.get('/data',function(req,res,next){
 	Data.find({}).then(function(data){
 		res.send(data);
-	});
+	}).catch(next);
 });
 
 
