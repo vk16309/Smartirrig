@@ -12,7 +12,7 @@ router.get('/data',function(req,res,next){
 router.get('/data/:id',function(req,res,next){
 	Data.findOne({_id:req.params.id}).then(function(data){
 		res.send(data);
-	});
+	}).catch(next);
 });
 
 
