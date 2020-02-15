@@ -10,7 +10,7 @@ mongoose.set('useUnifiedTopology', true);
 
 const app=express();
 
-mongoose.connect('mongodb://localhost/sensor_data');
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/sensor_data');
 mongoose.Promise=global.Promise;
 
 app.use(bodyParser.json());
